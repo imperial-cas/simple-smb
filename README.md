@@ -7,10 +7,11 @@ Make it as easy as possible to serve some files over samba
 To serve the current directory, run:
 
 ``` sh
-podman run --rm ghcr.io/imperial-cas/simple-smb/simple-smb --network=host -v .:/srv:Z
+sudo podman run --rm --network=host -v .:/srv ghcr.io/imperial-cas/simple-smb:main
 ```
 
-The `:Z` flag is needed for SELinux permissions. If you are not using SELinux you should omit that.
++ The `:Z` flag is needed for SELinux permissions. If you are not using SELinux you should omit that.
++ `sudo` is needed to bind the default ports for SMB
 
 ## Motivation
 
